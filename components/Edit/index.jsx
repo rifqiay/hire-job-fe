@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import FormData from "form-data";
 import Image from "next/image";
 import location from "../../public/location.svg";
 import edit from "../../public/edit.svg";
@@ -45,11 +46,7 @@ const EditProfile = ({ id }) => {
     //   console.log(`${key}: ${value}`);
     // }
     axios
-      .put(process.env.NEXT_PUBLIC_API + "/worker/" + id, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
+      .put(process.env.NEXT_PUBLIC_API + "/worker/" + id, formData)
       .then((res) => {
         Swal.fire({
           text: res.data.message,

@@ -18,6 +18,7 @@ const ShowPortfolio = ({ id }) => {
   }, [id]);
   return (
     <>
+      <h2 className="ms-4 ">Portfolio</h2>
       {portfolio.map((item) => (
         <div key={item.id} className="col-lg-3 col-md-4 col-6 mt-3">
           <div className="card p-2">
